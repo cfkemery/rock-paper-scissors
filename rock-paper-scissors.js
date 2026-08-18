@@ -56,6 +56,15 @@ function playGame(button) {
     let scoreUpdate = announceScore(winner);
     roundResult.textContent = announceWinner(winner, humanChoice, computerChoice);
     gameResult.textContent = `The score is User: ${humanScore} to Computer: ${computerScore}`;
+    if (humanScore == 5) {
+        gameResult.textContent = `Game Over! You win ${humanScore} to ${computerScore}!`;
+        humanScore = 0;
+        computerScore = 0;
+    } else if (computerScore == 5) {
+        gameResult.textContent = `Game Over! You lose ${humanScore} to ${computerScore}!`;
+        humanScore = 0;
+        computerScore = 0;
+    }
 }
 
 let buttonValue = ""
